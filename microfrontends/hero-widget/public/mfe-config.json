@@ -1,0 +1,9 @@
+{
+    "systemParams": {
+        "api": {
+            "heroes-ms": {
+                "url": "http://localhost:8081"
+            }
+        }
+    }
+}

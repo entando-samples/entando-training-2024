@@ -6,7 +6,27 @@
             "healthCheckPath": "/api/health"
         }
     ],
-    "microfrontends": [],
+    "microfrontends": [
+        {
+            "name": "hero-widget",
+            "customElement": "hero-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "hero-widget",
+                "it": "hero-widget"
+            },
+            "apiClaims": [
+                {
+                    "name": "heroes-ms",
+                    "type": "internal",
+                    "serviceName": "heroes-ms"
+                }
+            ]
+        }
+    ],
     "svc": [
         "keycloak"
     ],
