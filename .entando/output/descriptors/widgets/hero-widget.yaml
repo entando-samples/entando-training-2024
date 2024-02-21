@@ -1,0 +1,13 @@
+name: hero-widget
+type: widget
+titles:
+  en: hero-widget
+  it: hero-widget
+group: free
+descriptorVersion: v5
+customElement: hero-widget
+apiClaims:
+  - type: internal
+    name: heroes-ms
+    pluginName: heroes-ms
+params: []

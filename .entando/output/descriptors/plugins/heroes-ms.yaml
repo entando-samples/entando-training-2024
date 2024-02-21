@@ -1,0 +1,5 @@
+name: heroes-ms
+descriptorVersion: v6
+dbms: none
+image: ryanjpburgos/heroes-ms:0.0.1-SNAPSHOT
+healthCheckPath: /api/health

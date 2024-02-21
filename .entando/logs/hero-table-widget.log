@@ -1,0 +1,28 @@
+
+up to date, audited 956 packages in 5s
+
+123 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> hero-table-widget@0.0.0 build
+> ng build
+
+- Building...
+
+
+🌼   daisyUI 4.7.2
+├─ ✔︎ 1 theme added		https://daisyui.com/docs/themes
+╰─ ★ Star daisyUI on GitHub	https://github.com/saadeghi/daisyui
+
+Initial chunk files   | Names         |  Raw size | Estimated transfer size
+main-KU6Z4CEC.js      | main          | 175.84 kB |                50.90 kB
+polyfills-RT5I6R6G.js | polyfills     |  33.10 kB |                10.72 kB
+styles-IV7BC6YG.css   | styles        |   8.86 kB |                 2.27 kB
+
+                      | Initial total | 217.80 kB |                63.89 kB
+
+Output location: /Users/ryanjpburgos/repository/entando-training-2024/microfrontends/hero-table-widget/dist/hero-table-widget
+
+Application bundle generation complete. [16.126 seconds]

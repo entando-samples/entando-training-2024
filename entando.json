@@ -14,9 +14,30 @@
             "type": "widget",
             "group": "free",
             "publicFolder": "public",
+            "buildFolder": "dist",
             "titles": {
                 "en": "hero-widget",
                 "it": "hero-widget"
+            },
+            "apiClaims": [
+                {
+                    "name": "heroes-ms",
+                    "type": "internal",
+                    "serviceName": "heroes-ms"
+                }
+            ]
+        },
+        {
+            "name": "hero-table-widget",
+            "customElement": "hero-table-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "buildFolder": "dist",
+            "titles": {
+                "en": "hero-table-widget",
+                "it": "hero-table-widget"
             },
             "apiClaims": [
                 {

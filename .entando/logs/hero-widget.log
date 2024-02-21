@@ -1,0 +1,28 @@
+
+up to date, audited 956 packages in 5s
+
+123 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> hero-widget@0.0.0 build
+> ng build
+
+- Building...
+
+
+🌼   daisyUI 4.7.2
+├─ ✔︎ 1 theme added		https://daisyui.com/docs/themes
+╰─ ★ Star daisyUI on GitHub	https://github.com/saadeghi/daisyui
+
+Initial chunk files   | Names         |  Raw size | Estimated transfer size
+main-TPXOOEFO.js      | main          | 212.15 kB |                58.57 kB
+polyfills-RT5I6R6G.js | polyfills     |  33.10 kB |                10.72 kB
+styles-DE4HAOPP.css   | styles        |  19.52 kB |                 3.67 kB
+
+                      | Initial total | 264.77 kB |                72.96 kB
+
+Output location: /Users/ryanjpburgos/repository/entando-training-2024/microfrontends/hero-widget/dist/hero-widget
+
+Application bundle generation complete. [16.268 seconds]

@@ -13,23 +13,3 @@
   </form>
 </div>
 
-<div class="overflow-x-auto">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>City</th>
-        <th>Super Power</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for(hero of heroes; track hero.name) {
-      <tr>
-        <td>{{ hero.name }}</td>
-        <td>{{ hero.city }}</td>
-        <td>{{ hero.superPower }}</td>
-      </tr>
-      }
-    </tbody>
-  </table>
-</div>

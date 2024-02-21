@@ -1,0 +1,13 @@
+name: hero-table-widget
+type: widget
+titles:
+  en: hero-table-widget
+  it: hero-table-widget
+group: free
+descriptorVersion: v5
+customElement: hero-table-widget
+apiClaims:
+  - type: internal
+    name: heroes-ms
+    pluginName: heroes-ms
+params: []
