@@ -15,7 +15,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   selector: 'hero-widget',
   standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['../styles.scss', './app.component.scss'],
   imports: [ReactiveFormsModule],
   encapsulation: ViewEncapsulation.ShadowDom,
 })
