@@ -13,10 +13,10 @@ export class HeroService {
   constructor(private http: HttpClient) { }
 
   public getHeroes(): Observable<Array<IHero>> {
-    return this.http.get<Array<IHero>>(`${this.url}/hero`);
+    return this.http.get<Array<IHero>>(`${this.url}/api/hero`);
   }
 
   public addNewHero(newHero: IHero): Observable<IHero> {
-    return this.http.post<IHero>(`${this.url}/hero`, newHero);
+    return this.http.post<IHero>(`${this.url}/api/hero`, newHero);
   }
 }
