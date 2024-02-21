@@ -67,7 +67,7 @@
 
 	<build>
 		<defaultGoal>spring-boot:run</defaultGoal>
-		<finalName>springboot-agenda</finalName>
+		<finalName>heroes-ms</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
