@@ -66,6 +66,8 @@
 	</dependencies>
 
 	<build>
+		<defaultGoal>spring-boot:run</defaultGoal>
+		<finalName>springboot-agenda</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
