@@ -1,0 +1,9 @@
+{
+    "microservices": [],
+    "microfrontends": [],
+    "svc": [],
+    "name": "entando-training-2024",
+    "version": "0.0.1",
+    "description": "entando-training-2024 description",
+    "type": "bundle"
+}
