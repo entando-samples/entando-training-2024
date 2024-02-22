@@ -1,7 +1,61 @@
 {
-    "microservices": [],
-    "microfrontends": [],
-    "svc": [],
+    "microservices": [
+        {
+            "name": "heroes-ms",
+            "stack": "spring-boot",
+            "healthCheckPath": "/actuator/health",
+            "dbms": "postgresql",
+            "roles": [
+                "admin",
+                "user"
+            ]
+        }
+    ],
+    "microfrontends": [
+        {
+            "name": "hero-widget",
+            "customElement": "hero-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "buildFolder": "dist",
+            "titles": {
+                "en": "hero-widget",
+                "it": "hero-widget"
+            },
+            "apiClaims": [
+                {
+                    "name": "heroes-ms",
+                    "type": "internal",
+                    "serviceName": "heroes-ms"
+                }
+            ]
+        },
+        {
+            "name": "hero-table-widget",
+            "customElement": "hero-table-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "buildFolder": "dist",
+            "titles": {
+                "en": "hero-table-widget",
+                "it": "hero-table-widget"
+            },
+            "apiClaims": [
+                {
+                    "name": "heroes-ms",
+                    "type": "internal",
+                    "serviceName": "heroes-ms"
+                }
+            ]
+        }
+    ],
+    "svc": [
+        "keycloak"
+    ],
     "name": "entando-training-2024",
     "version": "0.0.1",
     "description": "entando-training-2024 description",
