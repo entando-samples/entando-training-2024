@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { IApiClaim } from './models/api-claim.model';
 import { mediatorInstance } from '@entando/mfecommunication';
 import { IHero } from './models/hero.model';
@@ -21,11 +21,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private heroService: HeroService,
-    private keycloakService: KeycloakService
+    private keycloakService: KeycloakService,
+    private ngZone: NgZone
   ) {
     mediatorInstance.subscribe('updateHeroTable', {
       callerId: 'updateHeroTableSubscriber',
-      callback: () => this.getHeroes(),
+      callback: () => this.ngZone.run(() => this.getHeroes()),
     });
   }
 
@@ -47,6 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private getHeroes(): void {
     this.heroService.getHeroes().subscribe((heroes: Array<IHero>) => {
+      console.log('getHeroes execution')
       this.heroes = heroes;
     });
   }
