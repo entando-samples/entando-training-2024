@@ -48,7 +48,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private getHeroes(): void {
     this.heroService.getHeroes().subscribe((heroes: Array<IHero>) => {
-      console.log('getHeroes execution')
       this.heroes = heroes;
     });
   }
@@ -60,7 +59,7 @@ export class AppComponent implements OnInit, OnDestroy {
       this.config = mfeconfig;
     }
     this.heroService.url = (this.config as IApiClaim).systemParams.api[
-      'heroes-ms'
+         'heroes-ms'
     ].url;
   }
 }
