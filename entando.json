@@ -54,7 +54,8 @@
         }
     ],
     "svc": [
-        "keycloak"
+        "keycloak",
+        "postgresql"
     ],
     "name": "entando-training-2024",
     "version": "0.0.1",

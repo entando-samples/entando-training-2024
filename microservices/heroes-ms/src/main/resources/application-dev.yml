@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/entando-training-2024
+    username: entando-training-2024-user
+    password: entando-training-2024-password
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  sql:
+    init:
+      continue-on-error: true
+      mode: always
+
