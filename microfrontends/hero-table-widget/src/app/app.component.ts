@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { IApiClaim } from './models/api-claim.model';
-import { Mediator } from '@entando/mfecommunication';
+import { mediatorInstance } from '@entando/mfecommunication';
 import { IHero } from './models/hero.model';
 import { HeroService } from './services/hero.service';
 import { mfeconfig } from './environments/environment';
@@ -16,7 +15,6 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   @Input() config!: IApiClaim | string;
-  private mediator: Mediator = new Mediator();
   private onDestroy$: Subject<void> = new Subject();
 
   public heroes: Array<IHero> = [];
@@ -25,7 +23,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private heroService: HeroService,
     private keycloakService: KeycloakService
   ) {
-    this.mediator.subscribe('updateHeroTable', {
+    mediatorInstance.subscribe('updateHeroTable', {
       callerId: 'updateHeroTableSubscriber',
       callback: () => this.getHeroes(),
     });

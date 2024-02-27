@@ -1,16 +1,10 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { HeroService } from './services/hero.service';
 import { IApiClaim } from './models/api-claim.model';
 import { mfeconfig } from './environments/environment';
 import { IHero } from './models/hero.model';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Mediator } from '@entando/mfecommunication';
-
+import { mediatorInstance } from '@entando/mfecommunication';
 
 @Component({
   selector: 'hero-widget',
@@ -22,7 +16,6 @@ import { Mediator } from '@entando/mfecommunication';
 })
 export class AppComponent implements OnInit {
   @Input() config!: IApiClaim | string;
-  private mediator: Mediator = new Mediator()
 
   public heroForm: FormGroup = new FormGroup({
     name: new FormControl(),
@@ -40,11 +33,9 @@ export class AppComponent implements OnInit {
     this.heroService
       .addNewHero(this.heroForm.value)
       .subscribe((newHero: IHero) => {
-        this.mediator.publish('updateHeroTable')
+        mediatorInstance.publish('updateHeroTable');
       });
   }
-
-
 
   private setConfig() {
     if (this.config) {

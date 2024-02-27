@@ -5,7 +5,6 @@ import { AppComponent } from './app/app.component';
 import {
   HTTP_INTERCEPTORS,
   HttpClientModule,
-  provideHttpClient,
 } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { SecurityInterceptor } from './app/interceptors/security.interceptor';
