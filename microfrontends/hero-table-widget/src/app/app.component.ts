@@ -22,11 +22,11 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private heroService: HeroService,
     private keycloakService: KeycloakService,
-    private ngZone: NgZone
+    private ngZone: NgZone // EntandoTips
   ) {
     mediatorInstance.subscribe('updateHeroTable', {
       callerId: 'updateHeroTableSubscriber',
-      callback: () => this.ngZone.run(() => this.getHeroes()),
+      callback: () => this.ngZone.run(() => this.getHeroes()), // EntandoTips
     });
   }
 
