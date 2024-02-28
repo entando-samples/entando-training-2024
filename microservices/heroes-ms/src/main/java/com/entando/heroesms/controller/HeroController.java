@@ -1,7 +1,7 @@
 package com.entando.heroesms.controller;
 
 import com.entando.heroesms.dto.Hero;
-import com.entando.heroesms.service.HeroServiceImpl;
+import com.entando.heroesms.service.HeroService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class HeroController {
 
-    private final HeroServiceImpl heroService;
+    private final HeroService heroService;
 
     @GetMapping
     public ResponseEntity<List<Hero>> getHeroes() {
