@@ -35,6 +35,13 @@
                 "page_code",
                 "info_currentLang",
                 "systemParam_applicationBaseURL"
+            ],
+            "configMfe": "config-hero-widget",
+            "params": [
+                {
+                    "name": "city",
+                    "description": "The cityof the heroes"
+                }
             ]
         },
         {
@@ -61,6 +68,15 @@
                 "info_currentLang",
                 "systemParam_applicationBaseURL"
             ]
+        },
+        {
+            "name": "config-hero-widget",
+            "customElement": "config-hero-widget",
+            "stack": "angular",
+            "type": "widget-config",
+            "group": "free",
+            "publicFolder": "public",
+            "buildFolder": "dist"
         }
     ],
     "svc": [

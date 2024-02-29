@@ -6,6 +6,12 @@ import { IHero } from './models/hero.model';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { mediatorInstance } from '@entando/mfecommunication';
 
+interface HeroForm {
+  name: FormControl<string>;
+  city: FormControl<string>;
+  superPower: FormControl<string>;
+
+}
 @Component({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   selector: 'hero-widget',
@@ -19,7 +25,7 @@ export class AppComponent implements OnInit {
   @Input() config!: IApiClaim | string;
   public pageCode!: string;
 
-  public heroForm: FormGroup = new FormGroup({
+  public heroForm: FormGroup<HeroForm> = new FormGroup<HeroForm>({
     name: new FormControl(),
     city: new FormControl(),
     superPower: new FormControl(),
@@ -30,11 +36,13 @@ export class AppComponent implements OnInit {
   public ngOnInit(): void {
     this.setConfig();
     this.pageCode = (this.config as IApiClaim).contextParams.page_code;
+    this.heroForm.controls.city.setValue((this.config as IApiClaim).params.city);
+    this.heroForm.controls.city.disable();
   }
 
   public saveNewHero(): void {
     this.heroService
-      .addNewHero(this.heroForm.value)
+      .addNewHero((this.heroForm.getRawValue() as IHero))
       .subscribe((newHero: IHero) => {
         mediatorInstance.publish('updateHeroTable');
       });

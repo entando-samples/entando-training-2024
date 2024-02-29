@@ -1,7 +1,6 @@
 export interface IApiClaim {
   systemParams: SystemParams;
   contextParams: ContextParams;
-  params?: any
 }
 
 export interface ContextParams {
