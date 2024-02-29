@@ -32,6 +32,9 @@
             "styles": [
               "src/styles.scss"
             ],
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            },
             "scripts": []
           },
           "configurations": {
@@ -40,12 +43,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "25kb"
+                  "maximumError": "35kb"
                 }
               ],
               "outputHashing": "all"

@@ -1,4 +1,4 @@
-import { IApiClaim } from "../models/api-claim.model";
+import { IApiClaim } from '../models/api-claim.model';
 
 export const mfeconfig: IApiClaim = {
   systemParams: {
@@ -7,5 +7,10 @@ export const mfeconfig: IApiClaim = {
         url: 'http://localhost:8080',
       },
     },
+  },
+  contextParams: {
+    page_code: 'my-page',
+    info_currentLang: 'it',
+    systemParam_applicationBaseURL: 'https://my-production-url/entando-de-app',
   },
 };

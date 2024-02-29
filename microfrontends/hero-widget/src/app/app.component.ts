@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { HeroService } from './services/hero.service';
 import { IApiClaim } from './models/api-claim.model';
 import { mfeconfig } from './environments/environment';
@@ -7,6 +7,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { mediatorInstance } from '@entando/mfecommunication';
 
 @Component({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   selector: 'hero-widget',
   standalone: true,
   templateUrl: './app.component.html',
@@ -16,6 +17,7 @@ import { mediatorInstance } from '@entando/mfecommunication';
 })
 export class AppComponent implements OnInit {
   @Input() config!: IApiClaim | string;
+  public pageCode!: string;
 
   public heroForm: FormGroup = new FormGroup({
     name: new FormControl(),
@@ -27,6 +29,7 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     this.setConfig();
+    this.pageCode = (this.config as IApiClaim).contextParams.page_code;
   }
 
   public saveNewHero(): void {

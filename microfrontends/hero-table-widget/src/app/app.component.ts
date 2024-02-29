@@ -1,4 +1,4 @@
-import { Component, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, NgZone, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { IApiClaim } from './models/api-claim.model';
 import { mediatorInstance } from '@entando/mfecommunication';
 import { IHero } from './models/hero.model';
@@ -8,10 +8,12 @@ import { KeycloakService } from './services/keycloak.service';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['../styles.scss', './app.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class AppComponent implements OnInit, OnDestroy {
   @Input() config!: IApiClaim | string;
@@ -39,6 +41,8 @@ export class AppComponent implements OnInit, OnDestroy {
           this.getHeroes();
         }
       });
+
+      console.log(this.config)
   }
 
   public ngOnDestroy(): void {

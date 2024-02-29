@@ -30,6 +30,11 @@
                     "type": "internal",
                     "serviceName": "heroes-ms"
                 }
+            ],
+            "contextParams": [
+                "page_code",
+                "info_currentLang",
+                "systemParam_applicationBaseURL"
             ]
         },
         {
@@ -50,6 +55,11 @@
                     "type": "internal",
                     "serviceName": "heroes-ms"
                 }
+            ],
+            "contextParams": [
+                "page_code",
+                "info_currentLang",
+                "systemParam_applicationBaseURL"
             ]
         }
     ],
