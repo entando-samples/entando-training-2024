@@ -16,7 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity
 public class SecurityConfiguration {
 
-    public static final String AGENDA_BUNDLE_API = "/api/**";
+    public static final String HEROES_API = "/api/**";
     public final JwtAuthConverter jwtAuthConverter;
 
     public SecurityConfiguration(JwtAuthConverter jwtAuthConverter) {
@@ -28,17 +28,14 @@ public class SecurityConfiguration {
         return http
                 .csrf(csrf -> csrf.disable()) //NOSONAR
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers(HttpMethod.OPTIONS, AGENDA_BUNDLE_API).permitAll()
-                        .requestMatchers(HttpMethod.GET, AGENDA_BUNDLE_API).permitAll()
-                        .requestMatchers(AGENDA_BUNDLE_API).authenticated()
-                        .requestMatchers("/swagger-ui/**").permitAll()
+                        .requestMatchers(HttpMethod.OPTIONS, HEROES_API).permitAll()
+                        .requestMatchers(HttpMethod.GET, HEROES_API).permitAll()
+                        .requestMatchers(HttpMethod.POST, HEROES_API).authenticated()
                         .requestMatchers("/actuator/**").permitAll()
-                        .requestMatchers("/v3/api-docs/**").permitAll()
                         .requestMatchers("/error").permitAll()
                         .anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2 ->
-                        oauth2.jwt(jwt ->
-                                jwt.jwtAuthenticationConverter(jwtAuthConverter)))
+                        oauth2.jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthConverter)))
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
