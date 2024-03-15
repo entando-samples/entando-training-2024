@@ -1,5 +1,8 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { mfeConfig } from '../environment/environment';
+import { HeroService } from './services/hero.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -9,8 +12,12 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['../styles.css', './app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  @Input() config: any;
+
   title = 'hero-form-widget';
+
+  constructor(private heroService: HeroService) {}
 
   heroForm: FormGroup = new FormGroup({
     name: new FormControl(),
@@ -18,8 +25,24 @@ export class AppComponent {
     superPower: new FormControl()
   })
 
+  public ngOnInit(): void {
+    this.setConfig();     
+  }
+
 
   saveNewHero() {
-    console.log(this.heroForm.value)
+    this.heroService.saveHero(this.heroForm.value).subscribe((hero) => {
+      console.log('Hero saved', hero);
+    })
+  }
+
+
+  private setConfig() {
+    if (this.config) {
+      this.config = JSON.parse(this.config);
+    }  else {
+      this.config = mfeConfig;
+    }
+    this.heroService.baseUrl = this.config.systemParams.api['hero-api'].url;
   }
 }

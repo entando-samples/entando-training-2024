@@ -18,7 +18,14 @@
                 "en": "hero-form-widget",
                 "it": "hero-form-widget"
             },
-            "buildFolder": "dist"
+            "buildFolder": "dist",
+            "apiClaims": [
+                {
+                    "name": "hero-api",
+                    "type": "internal",
+                    "serviceName": "hero-ms"
+                }
+            ]
         },
         {
             "name": "hero-table-widget",
@@ -31,7 +38,14 @@
                 "en": "hero-table-widget",
                 "it": "hero-table-widget"
             },
-            "buildFolder": "dist"
+            "buildFolder": "dist",
+            "apiClaims": [
+                {
+                    "name": "hero-api",
+                    "type": "internal",
+                    "serviceName": "hero-ms"
+                }
+            ]
         }
     ],
     "svc": [],
