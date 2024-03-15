@@ -1,0 +1,36 @@
+{
+    "microservices": [],
+    "microfrontends": [
+        {
+            "name": "hero-form-widget",
+            "customElement": "hero-form-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "hero-form-widget",
+                "it": "hero-form-widget"
+            },
+            "buildFolder": "dist"
+        },
+        {
+            "name": "hero-table-widget",
+            "customElement": "hero-table-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "hero-table-widget",
+                "it": "hero-table-widget"
+            },
+            "buildFolder": "dist"
+        }
+    ],
+    "svc": [],
+    "name": "entando-training-2024",
+    "version": "0.0.1",
+    "description": "entando-training-2024 description",
+    "type": "bundle"
+}
