@@ -1,5 +1,11 @@
 {
-    "microservices": [],
+    "microservices": [
+        {
+            "name": "hero-ms",
+            "stack": "spring-boot",
+            "healthCheckPath": "/actuator/health"
+        }
+    ],
     "microfrontends": [
         {
             "name": "hero-form-widget",
