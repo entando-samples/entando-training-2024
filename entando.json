@@ -1,56 +1,75 @@
 {
-    "microservices": [
+  "microservices": [
+    {
+      "name": "hero-ms",
+      "stack": "spring-boot",
+      "healthCheckPath": "/actuator/health",
+      "dbms": "postgresql"
+    }
+  ],
+  "microfrontends": [
+    {
+      "name": "hero-form-widget",
+      "customElement": "hero-form-widget",
+      "stack": "angular",
+      "type": "widget",
+      "group": "free",
+      "publicFolder": "public",
+      "titles": {
+        "en": "hero-form-widget",
+        "it": "hero-form-widget"
+      },
+      "configMfe": "simple-mfe-config",
+      "buildFolder": "dist",
+      "apiClaims": [
         {
-            "name": "hero-ms",
-            "stack": "spring-boot",
-            "healthCheckPath": "/actuator/health"
+          "name": "hero-api",
+          "type": "internal",
+          "serviceName": "hero-ms"
         }
-    ],
-    "microfrontends": [
+      ],
+      "params": [
         {
-            "name": "hero-form-widget",
-            "customElement": "hero-form-widget",
-            "stack": "angular",
-            "type": "widget",
-            "group": "free",
-            "publicFolder": "public",
-            "titles": {
-                "en": "hero-form-widget",
-                "it": "hero-form-widget"
-            },
-            "buildFolder": "dist",
-            "apiClaims": [
-                {
-                    "name": "hero-api",
-                    "type": "internal",
-                    "serviceName": "hero-ms"
-                }
-            ]
-        },
-        {
-            "name": "hero-table-widget",
-            "customElement": "hero-table-widget",
-            "stack": "angular",
-            "type": "widget",
-            "group": "free",
-            "publicFolder": "public",
-            "titles": {
-                "en": "hero-table-widget",
-                "it": "hero-table-widget"
-            },
-            "buildFolder": "dist",
-            "apiClaims": [
-                {
-                    "name": "hero-api",
-                    "type": "internal",
-                    "serviceName": "hero-ms"
-                }
-            ]
+          "name": "city",
+          "description": "The cityof the heroes"
         }
-    ],
-    "svc": [],
-    "name": "entando-training-2024",
-    "version": "0.0.1",
-    "description": "entando-training-2024 description",
-    "type": "bundle"
+      ]
+    },
+    {
+      "name": "hero-table-widget",
+      "customElement": "hero-table-widget",
+      "stack": "angular",
+      "type": "widget",
+      "group": "free",
+      "publicFolder": "public",
+      "titles": {
+        "en": "hero-table-widget",
+        "it": "hero-table-widget"
+      },
+      "buildFolder": "dist",
+      "apiClaims": [
+        {
+          "name": "hero-api",
+          "type": "internal",
+          "serviceName": "hero-ms"
+        }
+      ]
+    },
+    {
+      "name": "simple-mfe-config",
+      "customElement": "simple-mfe-config",
+      "stack": "angular",
+      "type": "widget-config",
+      "group": "free",
+      "publicFolder": "public",
+      "buildFolder": "dist"
+    }
+  ],
+  "svc": [
+    "postgresql"
+  ],
+  "name": "entando-training-2024",
+  "version": "0.0.2",
+  "description": "entando-training-2024 description",
+  "type": "bundle"
 }

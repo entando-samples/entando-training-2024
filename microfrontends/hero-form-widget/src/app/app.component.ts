@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { mfeConfig } from '../environment/environment';
 import { HeroService } from './services/hero.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Config } from './models/config.model';
 
 @Component({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -13,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['../styles.css', './app.component.css']
 })
 export class AppComponent implements OnInit {
-  @Input() config: any;
+  @Input() config: Config | string;
 
   title = 'hero-form-widget';
 
@@ -26,7 +27,13 @@ export class AppComponent implements OnInit {
   })
 
   public ngOnInit(): void {
-    this.setConfig();     
+    console.log('PRE config', this.config)
+    this.setConfig();
+    console.log('POST config', this.config)
+    if ((this.config as Config).params.city) {
+      console.log('inside IF', this.config)
+      this.heroForm.controls.city.setValue((this.config as Config).params.city)
+    }
   }
 
 
@@ -39,10 +46,10 @@ export class AppComponent implements OnInit {
 
   private setConfig() {
     if (this.config) {
-      this.config = JSON.parse(this.config);
+      this.config = JSON.parse(this.config as string);
     }  else {
-      this.config = mfeConfig;
+      this.config = mfeConfig as Config;
     }
-    this.heroService.baseUrl = this.config.systemParams.api['hero-api'].url;
+    this.heroService.baseUrl = (this.config as Config).systemParams.api['hero-api'].url;
   }
 }
