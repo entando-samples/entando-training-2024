@@ -4,7 +4,11 @@
       "name": "hero-ms",
       "stack": "spring-boot",
       "healthCheckPath": "/actuator/health",
-      "dbms": "postgresql"
+      "dbms": "postgresql",
+      "commands": {
+        "run": "mvn spring-boot:run -Dspring-boot.run.profiles=dev",
+        "build": "mvn verify --no-transfer-progress"
+      }
     }
   ],
   "microfrontends": [

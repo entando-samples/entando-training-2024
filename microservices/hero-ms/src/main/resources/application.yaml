@@ -18,3 +18,10 @@ spring:
       hibernate.cache.use_query_cache: false
       hibernate.generate_statistics: false
       hibernate.format_sql: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI:http://localhost:9080/auth/realms/entando-dev}
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
