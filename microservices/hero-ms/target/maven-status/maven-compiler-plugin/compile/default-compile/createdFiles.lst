@@ -1,0 +1,12 @@
+com/entando/heroms/model/HeroDto.class
+com/entando/heroms/model/HeroEntity.class
+com/entando/heroms/config/CorsConfig$1.class
+com/entando/heroms/repository/HeroRepository.class
+com/entando/heroms/config/SecurityConfiguration.class
+com/entando/heroms/HeromsApplication.class
+com/entando/heroms/service/HeroServiceImpl.class
+com/entando/heroms/service/HeroService.class
+com/entando/heroms/config/jwt/JwtAuthConverterProperties.class
+com/entando/heroms/controller/HeroController.class
+com/entando/heroms/config/jwt/JwtAuthConverter.class
+com/entando/heroms/config/CorsConfig.class

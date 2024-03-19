@@ -1,79 +1,109 @@
 {
-  "microservices": [
-    {
-      "name": "hero-ms",
-      "stack": "spring-boot",
-      "healthCheckPath": "/actuator/health",
-      "dbms": "postgresql",
-      "commands": {
-        "run": "mvn spring-boot:run -Dspring-boot.run.profiles=dev",
-        "build": "mvn verify --no-transfer-progress"
-      }
-    }
-  ],
-  "microfrontends": [
-    {
-      "name": "hero-form-widget",
-      "customElement": "hero-form-widget",
-      "stack": "angular",
-      "type": "widget",
-      "group": "free",
-      "publicFolder": "public",
-      "titles": {
-        "en": "hero-form-widget",
-        "it": "hero-form-widget"
-      },
-      "configMfe": "simple-mfe-config",
-      "buildFolder": "dist",
-      "apiClaims": [
+    "microservices": [
         {
-          "name": "hero-api",
-          "type": "internal",
-          "serviceName": "hero-ms"
+            "name": "hero-ms",
+            "stack": "spring-boot",
+            "healthCheckPath": "/actuator/health",
+            "dbms": "postgresql",
+            "commands": {
+                "run": "mvn spring-boot:run -Dspring-boot.run.profiles=dev",
+                "build": "mvn verify --no-transfer-progress"
+            }
         }
-      ],
-      "params": [
+    ],
+    "microfrontends": [
         {
-          "name": "city",
-          "description": "The cityof the heroes"
-        }
-      ]
-    },
-    {
-      "name": "hero-table-widget",
-      "customElement": "hero-table-widget",
-      "stack": "angular",
-      "type": "widget",
-      "group": "free",
-      "publicFolder": "public",
-      "titles": {
-        "en": "hero-table-widget",
-        "it": "hero-table-widget"
-      },
-      "buildFolder": "dist",
-      "apiClaims": [
+            "name": "hero-form-widget",
+            "customElement": "hero-form-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "hero-form-widget",
+                "it": "hero-form-widget"
+            },
+            "configMfe": "simple-mfe-config",
+            "buildFolder": "dist",
+            "apiClaims": [
+                {
+                    "name": "hero-api",
+                    "type": "internal",
+                    "serviceName": "hero-ms"
+                }
+            ],
+            "params": [
+                {
+                    "name": "city",
+                    "description": "The cityof the heroes"
+                }
+            ],
+            "contextParams": [
+                "page_code",
+                "info_currentLang",
+                "systemParam_applicationBaseURL"
+            ]
+        },
         {
-          "name": "hero-api",
-          "type": "internal",
-          "serviceName": "hero-ms"
+            "name": "hero-table-widget",
+            "customElement": "hero-table-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "hero-table-widget",
+                "it": "hero-table-widget"
+            },
+            "buildFolder": "dist",
+            "apiClaims": [
+                {
+                    "name": "hero-api",
+                    "type": "internal",
+                    "serviceName": "hero-ms"
+                }
+            ],
+            "contextParams": [
+                "page_code",
+                "info_currentLang",
+                "systemParam_applicationBaseURL"
+            ]
+        },
+        {
+            "name": "simple-mfe-config",
+            "customElement": "simple-mfe-config",
+            "stack": "angular",
+            "type": "widget-config",
+            "group": "free",
+            "publicFolder": "public",
+            "buildFolder": "dist"
+        },
+        {
+            "name": "epc-example",
+            "customElement": "epc-example",
+            "stack": "react",
+            "type": "app-builder",
+            "slot": "content",
+            "group": "free",
+            "publicFolder": "public",
+            "paths": ["/epc-example"],
+            "nav": [
+              {
+                "label": {
+                  "en": "EPC Example",
+                  "it": "Esempio EPC"
+                },
+                "target": "internal",
+                "url": "/epc-example"
+              }
+            ]
         }
-      ]
-    },
-    {
-      "name": "simple-mfe-config",
-      "customElement": "simple-mfe-config",
-      "stack": "angular",
-      "type": "widget-config",
-      "group": "free",
-      "publicFolder": "public",
-      "buildFolder": "dist"
-    }
-  ],
-  "svc": [
-    "postgresql"
-  ],
-  "name": "entando-training-2024",
-  "version": "0.0.2",
-  "description": "entando-training-2024 description",
-  "type": "bundle"
+    ],
+    "svc": [
+        "postgresql"
+    ],
+    "name": "entando-training-2024",
+    "version": "0.0.3",
+    "description": "entando-training-2024 description",
+    "type": "bundle"
 }

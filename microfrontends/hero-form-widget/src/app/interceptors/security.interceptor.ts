@@ -11,7 +11,7 @@ export class SecurityInterceptor implements HttpInterceptor {
     if (window.entando 
         && window.entando.keycloak 
         && window.entando.keycloak.token 
-        && window.entando.keycloak.token.authenticated) {
+        && window.entando.keycloak.authenticated) {
       return window.entando.keycloak.token;
     }
     return '';

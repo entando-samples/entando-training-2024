@@ -1,0 +1,33 @@
+
+up to date, audited 976 packages in 5s
+
+123 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+> hero-table-widget@0.0.0 build
+> ng build
+
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+- Copying assets...
+✔ Copying assets complete.
+- Generating index html...
+✔ Index html generation complete.
+
+Initial chunk files           | Names         |  Raw size | Estimated transfer size
+main.e71283cc056c637e.js      | main          | 172.82 kB |                50.14 kB
+polyfills.da66f76d753a08b3.js | polyfills     |  33.39 kB |                10.76 kB
+styles.43ac02c995f77a8f.css   | styles        |  10.94 kB |                 2.42 kB
+runtime.45e1173bf3bb1fee.js   | runtime       | 912 bytes |               511 bytes
+
+                              | Initial total | 218.03 kB |                63.82 kB
+
+Build at: 2024-03-18T09:52:49.171Z - Hash: b386bb39351b2145 - Time: 7274ms

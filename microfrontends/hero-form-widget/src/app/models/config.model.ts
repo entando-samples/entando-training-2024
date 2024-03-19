@@ -1,15 +1,15 @@
 export interface Config {
   systemParams: SystemParams;
-  // contextParams: ContextParams;
+  contextParams: ContextParams;
   params?: any
 }
 
-// export interface ContextParams {
-//   page_code: string;
-//   info_currentLang: string;
-//   systemParam_applicationBaseURL: string;
-// };
-//
+export interface ContextParams {
+  page_code: string;
+  info_currentLang: string;
+  systemParam_applicationBaseURL: string;
+};
+
 export interface SystemParams {
   api: Api;
 }

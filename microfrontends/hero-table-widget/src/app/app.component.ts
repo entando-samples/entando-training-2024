@@ -1,8 +1,9 @@
-import {CUSTOM_ELEMENTS_SCHEMA, Component, Input, OnInit} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, Component, Input, NgZone, OnInit, ViewEncapsulation} from '@angular/core';
 import { mfeConfig } from '../environment/environment';
 import { HeroService } from './services/hero.service';
 import {IHero} from "./models/hero.model";
-
+import { KeycloakService } from './services/keycloak.service';
+import { mediatorInstance } from '@entando/mfecommunication';
 
 @Component({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -10,17 +11,32 @@ import {IHero} from "./models/hero.model";
   standalone: true,
   imports: [],
   templateUrl: './app.component.html',
-  styleUrls: ['../styles.css', './app.component.css']
+  styleUrls: ['../styles.css', './app.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class AppComponent implements OnInit {
   @Input() config: any;
   heroes: IHero[];
 
-  constructor(private heroService: HeroService) {}
+  constructor(private heroService: HeroService, private keycloakService: KeycloakService, private ngZone: NgZone) {
+    mediatorInstance.subscribe('updateHeroList', {
+      callerId: 'hero-table-widget',
+      callback: () => {
+        this.ngZone.run(() => {
+          this.fetchHeroes();
+        })
+      }
+    })
+  }
 
   public ngOnInit(): void {
     this.setConfig();
-    this.fetchHeroes();
+    this.keycloakService.instance$.subscribe((keycloak) => {
+      console.log(keycloak)
+      if (keycloak.initialized) {
+        this.fetchHeroes();
+      }
+    })
   }
 
   private setConfig() {

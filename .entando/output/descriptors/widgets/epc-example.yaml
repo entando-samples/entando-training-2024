@@ -1,0 +1,17 @@
+name: epc-example
+type: app-builder
+group: free
+descriptorVersion: v5
+customElement: epc-example
+params: []
+ext:
+  appBuilder:
+    slot: content
+    nav:
+      - label:
+          en: EPC Example
+          it: Esempio EPC
+        target: internal
+        url: /epc-example
+    paths:
+      - /epc-example

@@ -1,0 +1,33 @@
+
+up to date, audited 976 packages in 5s
+
+123 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+> hero-form-widget@0.0.0 build
+> ng build
+
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+- Copying assets...
+✔ Copying assets complete.
+- Generating index html...
+✔ Index html generation complete.
+
+Initial chunk files           | Names         |  Raw size | Estimated transfer size
+main.52ea92a36853bdd5.js      | main          | 212.18 kB |                58.00 kB
+polyfills.30b8245dd161016b.js | polyfills     |  33.38 kB |                10.74 kB
+styles.89436fc52f018427.css   | styles        |  21.59 kB |                 3.82 kB
+runtime.472fbd1e026354cd.js   | runtime       | 910 bytes |               519 bytes
+
+                              | Initial total | 268.04 kB |                73.07 kB
+
+Build at: 2024-03-18T09:52:49.268Z - Hash: c7bcbb75cad36d1a - Time: 7476ms

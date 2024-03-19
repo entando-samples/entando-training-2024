@@ -7,11 +7,11 @@ export class SecurityInterceptor implements HttpInterceptor {
 
 
   getKeyCloakToken() {
-
+    console.log(window.entando.keycloak)
     if (window.entando 
         && window.entando.keycloak 
         && window.entando.keycloak.token 
-        && window.entando.keycloak.token.authenticated) {
+        && window.entando.keycloak.authenticated) {
       return window.entando.keycloak.token;
     }
     return '';
@@ -20,7 +20,7 @@ export class SecurityInterceptor implements HttpInterceptor {
 
   getDefaultOptions() {
     const token = this.getKeyCloakToken();
-
+    console.log(token)
     return {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",

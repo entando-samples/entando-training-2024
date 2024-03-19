@@ -1,0 +1,11 @@
+name: entando-training-2024
+description: entando-training-2024 description
+components:
+  widgets:
+    - widgets/hero-form-widget.yaml
+    - widgets/hero-table-widget.yaml
+    - widgets/simple-mfe-config.yaml
+    - widgets/epc-example.yaml
+  plugins:
+    - plugins/hero-ms.yaml
+descriptorVersion: v6

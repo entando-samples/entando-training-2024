@@ -1,0 +1,20 @@
+name: hero-form-widget
+type: widget
+titles:
+  en: hero-form-widget
+  it: hero-form-widget
+group: free
+descriptorVersion: v5
+customElement: hero-form-widget
+apiClaims:
+  - type: internal
+    name: hero-api
+    pluginName: hero-ms
+params:
+  - name: city
+    description: The cityof the heroes
+configMfe: simple-mfe-config
+contextParams:
+  - page_code
+  - info_currentLang
+  - systemParam_applicationBaseURL

@@ -1,0 +1,5 @@
+name: hero-ms
+descriptorVersion: v6
+dbms: postgresql
+image: ryanjpburgos/hero-ms:0.0.1-SNAPSHOT
+healthCheckPath: /actuator/health

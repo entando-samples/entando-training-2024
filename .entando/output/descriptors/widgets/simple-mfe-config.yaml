@@ -1,0 +1,6 @@
+name: simple-mfe-config
+type: widget-config
+group: free
+descriptorVersion: v5
+customElement: simple-mfe-config
+params: []
