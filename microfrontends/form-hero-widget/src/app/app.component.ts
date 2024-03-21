@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IHero } from './models/hero.model';
 import { HeroService } from './services/hero.service';
+import { Config } from './models/config.model';
+import { config } from './environment/environment';
 
 
 interface HeroForm {
@@ -18,7 +20,8 @@ interface HeroForm {
   templateUrl: './app.component.html',
   styleUrls: ["../styles.css", './app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  @Input() config: Config | string;
   
   title = 'form-hero-widget';
   public heroForm: FormGroup<HeroForm> = new FormGroup<HeroForm>({
@@ -30,6 +33,10 @@ export class AppComponent {
 
   constructor(private heroService: HeroService) {}
 
+  ngOnInit(): void {
+      this.setConfig();
+  }
+
 
   public saveNewHero(): void {
     this.heroService
@@ -37,6 +44,17 @@ export class AppComponent {
       .subscribe((newHero: IHero) => {
         console.log(newHero);
       });
+  }
+
+
+  private setConfig() {
+    if (typeof this.config === 'string') {
+      this.config = JSON.parse(this.config);
+    } else {
+      this.config = config;
+    }
+
+    this.heroService.url = (this.config as Config).systemParams.api['hero-api'].url;
   }
 
 
