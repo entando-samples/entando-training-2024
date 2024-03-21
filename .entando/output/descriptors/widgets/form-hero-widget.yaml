@@ -1,0 +1,17 @@
+name: form-hero-widget
+type: widget
+titles:
+  en: form-hero-widget
+  it: form-hero-widget
+group: free
+descriptorVersion: v5
+customElement: form-hero-widget
+apiClaims:
+  - type: internal
+    name: hero-api
+    pluginName: heroms
+params: []
+contextParams:
+  - page_code
+  - info_currentLang
+  - systemParam_applicationBaseURL

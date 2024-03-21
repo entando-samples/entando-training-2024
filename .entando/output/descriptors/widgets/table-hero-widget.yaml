@@ -1,0 +1,17 @@
+name: table-hero-widget
+type: widget
+titles:
+  en: table-hero-widget
+  it: table-hero-widget
+group: free
+descriptorVersion: v5
+customElement: table-hero-widget
+apiClaims:
+  - type: internal
+    name: hero-api
+    pluginName: heroms
+params: []
+contextParams:
+  - page_code
+  - info_currentLang
+  - systemParam_applicationBaseURL

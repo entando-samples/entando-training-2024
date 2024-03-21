@@ -1,0 +1,32 @@
+
+up to date, audited 970 packages in 4s
+
+126 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> table-hero-widget@0.0.0 build
+> ng build
+
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+- Copying assets...
+✔ Copying assets complete.
+- Generating index html...
+✔ Index html generation complete.
+
+Initial chunk files           | Names         |  Raw size | Estimated transfer size
+main.0e83baadf0797e67.js      | main          | 168.91 kB |                49.22 kB
+polyfills.5d580af60a69b2eb.js | polyfills     |  33.39 kB |                10.74 kB
+styles.43ac02c995f77a8f.css   | styles        |  10.94 kB |                 2.42 kB
+runtime.4786bc096faf8f81.js   | runtime       | 912 bytes |               511 bytes
+
+                              | Initial total | 214.13 kB |                62.88 kB
+
+Build at: 2024-03-21T14:50:04.132Z - Hash: c646a789b93ad5fa - Time: 3978ms
+
+Warning: /Users/ryanjpburgos/repository/ent-training-2024/entando-training-2024/microfrontends/table-hero-widget/src/styles.css exceeded maximum budget. Budget 6.00 kB was not met by 4.94 kB with a total of 10.94 kB.
+
+

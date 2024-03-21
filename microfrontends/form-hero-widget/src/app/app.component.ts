@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IHero } from './models/hero.model';
 import { HeroService } from './services/hero.service';
@@ -18,10 +18,13 @@ interface HeroForm {
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './app.component.html',
-  styleUrls: ["../styles.css", './app.component.css']
+  styleUrls: ["../styles.css", './app.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent implements OnInit {
   @Input() config: Config | string;
+
+  public page_code: string;
   
   title = 'form-hero-widget';
   public heroForm: FormGroup<HeroForm> = new FormGroup<HeroForm>({
@@ -55,6 +58,8 @@ export class AppComponent implements OnInit {
     }
 
     this.heroService.url = (this.config as Config).systemParams.api['hero-api'].url;
+    this.page_code = (this.config as Config).contextParams.page_code;
+    console.log(this.config)
   }
 
 

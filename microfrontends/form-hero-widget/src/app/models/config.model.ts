@@ -6,4 +6,9 @@ export interface Config {
             };
         };
     };
+    contextParams: {
+        page_code: string;
+        info_currentLang: string;
+        systemParam_applicationBaseURL: string;
+    };
 }

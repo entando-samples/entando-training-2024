@@ -1,0 +1,9 @@
+name: heroes
+description: heroes description
+components:
+  widgets:
+    - widgets/form-hero-widget.yaml
+    - widgets/table-hero-widget.yaml
+  plugins:
+    - plugins/heroms.yaml
+descriptorVersion: v6
