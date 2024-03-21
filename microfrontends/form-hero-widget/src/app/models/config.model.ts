@@ -11,4 +11,7 @@ export interface Config {
         info_currentLang: string;
         systemParam_applicationBaseURL: string;
     };
+    params: {
+        city: string;
+    }
 }

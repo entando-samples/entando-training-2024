@@ -6,7 +6,8 @@
             "healthCheckPath": "/actuator/health",
             "commands": {
                 "run": "./mvnw spring-boot:run -Dspring-boot.run.profiles=dev"
-            }
+            },
+            "dbms": "postgresql"
         }
     ],
     "microfrontends": [
@@ -28,11 +29,18 @@
                     "type": "internal",
                     "serviceName": "heroms"
                 }
-            ], 
+            ],
             "contextParams": [
                 "page_code",
                 "info_currentLang",
                 "systemParam_applicationBaseURL"
+            ],
+            "configMfe": "simple-mfe-config",
+            "params": [
+                {
+                    "name": "city",
+                    "description": "the city of the hero"
+                }
             ]
         },
         {
@@ -59,13 +67,22 @@
                 "info_currentLang",
                 "systemParam_applicationBaseURL"
             ]
+        },
+        {
+            "name": "simple-mfe-config",
+            "customElement": "simple-mfe-config",
+            "stack": "angular",
+            "type": "widget-config",
+            "group": "free",
+            "publicFolder": "public",
+            "buildFolder": "dist"
         }
     ],
     "svc": [
         "postgresql"
     ],
     "name": "heroes",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "heroes description",
     "type": "bundle"
 }

@@ -2,8 +2,8 @@ FROM openjdk:17
 
 WORKDIR /app
 
-COPY target/heroes-ms.jar /app/heroes-ms.jar
+COPY target/heroms.jar /app/heroms.jar
 
-CMD ["java", "-jar", "heroes-ms.jar"]
+CMD ["java", "-jar", "heroms.jar"]
 
 EXPOSE 8081

@@ -1,5 +1,5 @@
 name: heroms
 descriptorVersion: v6
-dbms: none
+dbms: postgresql
 image: ryanjpburgos/heroms:0.0.1-SNAPSHOT
-healthCheckPath: /api/health
+healthCheckPath: /actuator/health

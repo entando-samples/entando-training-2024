@@ -60,6 +60,10 @@ export class AppComponent implements OnInit {
     this.heroService.url = (this.config as Config).systemParams.api['hero-api'].url;
     this.page_code = (this.config as Config).contextParams.page_code;
     console.log(this.config)
+
+    if ((this.config as Config).params.city) {
+      this.heroForm.controls.city.setValue((this.config as Config).params.city);
+    }
   }
 
 

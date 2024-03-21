@@ -1,0 +1,28 @@
+
+up to date, audited 936 packages in 3s
+
+118 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> simple-mfe-config@0.0.0 build
+> ng build
+
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+- Copying assets...
+✔ Copying assets complete.
+- Generating index html...
+✔ Index html generation complete.
+
+Initial chunk files           | Names         |  Raw size | Estimated transfer size
+main.08b9dbebe367d587.js      | main          | 132.43 kB |                39.91 kB
+polyfills.e2c864198e9e0bdd.js | polyfills     |  33.39 kB |                10.76 kB
+runtime.0ff90ee7577a8747.js   | runtime       | 912 bytes |               511 bytes
+styles.ef46db3751d8e999.css   | styles        |   0 bytes |                       -
+
+                              | Initial total | 166.71 kB |                51.17 kB
+
+Build at: 2024-03-21T16:07:00.690Z - Hash: 3d0a8d6a7ecbb74e - Time: 4398ms

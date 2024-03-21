@@ -10,7 +10,10 @@ apiClaims:
   - type: internal
     name: hero-api
     pluginName: heroms
-params: []
+params:
+  - name: city
+    description: the city of the hero
+configMfe: simple-mfe-config
 contextParams:
   - page_code
   - info_currentLang

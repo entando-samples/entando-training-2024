@@ -4,6 +4,7 @@ components:
   widgets:
     - widgets/form-hero-widget.yaml
     - widgets/table-hero-widget.yaml
+    - widgets/simple-mfe-config.yaml
   plugins:
     - plugins/heroms.yaml
 descriptorVersion: v6
