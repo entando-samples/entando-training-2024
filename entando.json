@@ -1,0 +1,36 @@
+{
+    "microservices": [],
+    "microfrontends": [
+        {
+            "name": "form-hero-widget",
+            "customElement": "form-hero-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "form-hero-widget",
+                "it": "form-hero-widget"
+            },
+            "buildFolder": "dist"
+        },
+        {
+            "name": "table-hero-widget",
+            "customElement": "table-hero-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "table-hero-widget",
+                "it": "table-hero-widget"
+            },
+            "buildFolder": "dist"
+        }
+    ],
+    "svc": [],
+    "name": "heroes",
+    "version": "0.0.1",
+    "description": "heroes description",
+    "type": "bundle"
+}
