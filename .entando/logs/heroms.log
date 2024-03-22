@@ -13,7 +13,9 @@
 [INFO] 
 [INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ heroms ---
 [INFO] Changes detected - recompiling the module! :source
-[INFO] Compiling 8 source files with javac [debug release 17] to target/classes
+[INFO] Compiling 11 source files with javac [debug release 17] to target/classes
+[INFO] /Users/ryanjpburgos/repository/ent-training-2024/entando-training-2024/microservices/heroms/src/main/java/com/entando/heroms/heroms/config/jwt/JwtAuthConverter.java: /Users/ryanjpburgos/repository/ent-training-2024/entando-training-2024/microservices/heroms/src/main/java/com/entando/heroms/heroms/config/jwt/JwtAuthConverter.java uses unchecked or unsafe operations.
+[INFO] /Users/ryanjpburgos/repository/ent-training-2024/entando-training-2024/microservices/heroms/src/main/java/com/entando/heroms/heroms/config/jwt/JwtAuthConverter.java: Recompile with -Xlint:unchecked for details.
 [INFO] 
 [INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ heroms ---
 [INFO] skip non existing resourceDirectory /Users/ryanjpburgos/repository/ent-training-2024/entando-training-2024/microservices/heroms/src/test/resources
@@ -34,8 +36,8 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  9.204 s
-[INFO] Finished at: 2024-03-21T17:07:12+01:00
+[INFO] Total time:  16.003 s
+[INFO] Finished at: 2024-03-22T11:11:45+01:00
 [INFO] ------------------------------------------------------------------------
 #0 building with "desktop-linux" instance using docker driver
 
@@ -54,27 +56,27 @@
 #4 DONE 0.0s
 
 #3 [internal] load metadata for docker.io/library/openjdk:17
-#3 DONE 1.9s
+#3 DONE 1.6s
 
 #5 [1/3] FROM docker.io/library/openjdk:17@sha256:528707081fdb9562eb819128a9f85ae7fe000e2fbaeaf9f87662e7b3f38cb7d8
 #5 DONE 0.0s
 
 #6 [internal] load build context
-#6 transferring context: 50.68MB 1.4s done
-#6 DONE 1.4s
+#6 transferring context: 54.87MB 1.5s done
+#6 DONE 1.6s
 
 #7 [2/3] WORKDIR /app
 #7 CACHED
 
 #8 [3/3] COPY target/heroms.jar /app/heroms.jar
-#8 DONE 0.3s
+#8 DONE 0.7s
 
 #9 exporting to image
 #9 exporting layers
-#9 exporting layers 0.3s done
-#9 writing image sha256:cb316d5e8bf8aeefbad5fbe7d7b067ff86a52e7733e4bb95bb2019fa29edd3c2 done
+#9 exporting layers 0.5s done
+#9 writing image sha256:8721b20d4c9ed58ccbcf165cc115b9598024b906878db39ae7faaf6e1ec4081c done
 #9 naming to docker.io/ryanjpburgos/heroms:0.0.1-SNAPSHOT done
-#9 DONE 0.4s
+#9 DONE 0.5s
 
 What's Next?
   View summary of image vulnerabilities and recommendations → docker scout quickview

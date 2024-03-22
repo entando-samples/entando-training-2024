@@ -4,7 +4,7 @@ import { IHero } from './models/hero.model';
 import { HeroService } from './services/hero.service';
 import { Config } from './models/config.model';
 import { config } from './environment/environment';
-
+import { mediatorInstance } from '@entando/mfecommunication';
 
 interface HeroForm {
   name: FormControl<string>;
@@ -46,6 +46,7 @@ export class AppComponent implements OnInit {
       .addNewHero((this.heroForm.getRawValue() as IHero))
       .subscribe((newHero: IHero) => {
         console.log(newHero);
+        mediatorInstance.publish('updateHeroList');
       });
   }
 

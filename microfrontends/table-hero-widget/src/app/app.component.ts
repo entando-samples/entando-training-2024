@@ -1,10 +1,11 @@
-import { Component, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, NgZone, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { IHero } from './models/hero.model';
 import { HeroService } from './services/hero.service';
 import { Config } from './models/config.model';
 import { config } from './environment/environment';
 import { KeycloakService } from './services/keycloak.service';
 import { Subject, filter, take, takeUntil } from 'rxjs';
+import { mediatorInstance } from '@entando/mfecommunication';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,10 @@ export class AppComponent implements OnInit, OnDestroy {
   public heroes: Array<IHero> = [];
   private destroy$ = new Subject<void>();
 
-  constructor(private heroService: HeroService, private keycloakService: KeycloakService) {
+  constructor(
+    private heroService: HeroService, 
+    private keycloakService: KeycloakService,
+    private ngZone: NgZone) {
    
   }
 
@@ -31,10 +35,10 @@ export class AppComponent implements OnInit, OnDestroy {
         take(1)
       )
       .subscribe((keycloak) => {
-       
           this.getHeroes();
-        
       });
+
+      this.updateTableHero();
   }
 
   ngOnDestroy(): void {
@@ -57,6 +61,17 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     this.heroService.url = (this.config as Config).systemParams.api['hero-api'].url;
+  }
+
+
+  private updateTableHero() {
+    mediatorInstance.subscribe('updateHeroList', {
+      callerId: 'table-hero-widget',
+      callback: () => {
+        this.ngZone.run(() => {
+          this.getHeroes();
+        });
+      }})
   }
 
 

@@ -1,10 +1,15 @@
 
-up to date, audited 970 packages in 4s
+up to date, audited 979 packages in 5s
 
 126 packages are looking for funding
   run `npm fund` for details
 
-found 0 vulnerabilities
+3 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
 
 > form-hero-widget@0.0.0 build
 > ng build
@@ -23,14 +28,14 @@ found 0 vulnerabilities
 ✔ Index html generation complete.
 
 Initial chunk files           | Names         |  Raw size | Estimated transfer size
-main.a0da44c668f27554.js      | main          | 209.03 kB |                57.28 kB
+main.466b60a3b3a42432.js      | main          | 212.25 kB |                57.99 kB
 polyfills.ed6e349c9265d649.js | polyfills     |  33.38 kB |                10.74 kB
 styles.89436fc52f018427.css   | styles        |  21.59 kB |                 3.82 kB
 runtime.fc0fe6e3eb3308d4.js   | runtime       | 910 bytes |               506 bytes
 
-                              | Initial total | 264.89 kB |                72.33 kB
+                              | Initial total | 268.11 kB |                73.05 kB
 
-Build at: 2024-03-21T16:07:13.715Z - Hash: 80243827b0c7fcdf - Time: 17051ms
+Build at: 2024-03-22T10:11:51.460Z - Hash: 50f40ac15dfbf1a0 - Time: 30610ms
 
 Warning: /Users/ryanjpburgos/repository/ent-training-2024/entando-training-2024/microfrontends/form-hero-widget/src/styles.css exceeded maximum budget. Budget 6.00 kB was not met by 15.59 kB with a total of 21.59 kB.
 

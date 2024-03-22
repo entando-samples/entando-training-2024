@@ -1,15 +1,25 @@
 
-up to date, audited 970 packages in 4s
+up to date, audited 979 packages in 5s
 
 126 packages are looking for funding
   run `npm fund` for details
 
-found 0 vulnerabilities
+3 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
 
 > table-hero-widget@0.0.0 build
 > ng build
 
 - Generating browser application bundles (phase: setup)...
+
+🌼   daisyUI 4.7.3
+├─ ✔︎ 2 themes added		https://daisyui.com/docs/themes
+╰─ ❤︎ Support daisyUI project:	https://opencollective.com/daisyui
+
 ✔ Browser application bundle generation complete.
 ✔ Browser application bundle generation complete.
 - Copying assets...
@@ -18,15 +28,15 @@ found 0 vulnerabilities
 ✔ Index html generation complete.
 
 Initial chunk files           | Names         |  Raw size | Estimated transfer size
-main.0e83baadf0797e67.js      | main          | 168.91 kB |                49.22 kB
+main.cfdac274ff6c1a3a.js      | main          | 173.36 kB |                50.26 kB
 polyfills.5d580af60a69b2eb.js | polyfills     |  33.39 kB |                10.74 kB
-styles.43ac02c995f77a8f.css   | styles        |  10.94 kB |                 2.42 kB
+styles.3d5a79724976bbe4.css   | styles        |  11.12 kB |                 2.46 kB
 runtime.4786bc096faf8f81.js   | runtime       | 912 bytes |               511 bytes
 
-                              | Initial total | 214.13 kB |                62.88 kB
+                              | Initial total | 218.76 kB |                63.96 kB
 
-Build at: 2024-03-21T16:07:01.286Z - Hash: c646a789b93ad5fa - Time: 4385ms
+Build at: 2024-03-22T10:11:50.573Z - Hash: d670e63c7120d999 - Time: 29695ms
 
-Warning: /Users/ryanjpburgos/repository/ent-training-2024/entando-training-2024/microfrontends/table-hero-widget/src/styles.css exceeded maximum budget. Budget 6.00 kB was not met by 4.94 kB with a total of 10.94 kB.
+Warning: /Users/ryanjpburgos/repository/ent-training-2024/entando-training-2024/microfrontends/table-hero-widget/src/styles.css exceeded maximum budget. Budget 6.00 kB was not met by 5.12 kB with a total of 11.12 kB.
 
 
