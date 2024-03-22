@@ -1,6 +1,6 @@
 <h1>{{ page_code }}</h1>
 
-<div class="mb-16 bordered p-2 border-entando border-hero-table">
+<div class="mb-16 bordered p-2">
   <form class="grid grid-flow-row gap-2" [formGroup]="heroForm" (ngSubmit)="saveNewHero()">
     <label class="input input-bordered flex items-center gap-2">
       <input type="text" class="grow" placeholder="Name" formControlName="name" />

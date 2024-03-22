@@ -1,8 +1,10 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { IHero } from './models/hero.model';
 import { HeroService } from './services/hero.service';
 import { Config } from './models/config.model';
 import { config } from './environment/environment';
+import { KeycloakService } from './services/keycloak.service';
+import { Subject, filter, take, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,19 +14,32 @@ import { config } from './environment/environment';
   styleUrls: ['../styles.css','./app.component.css'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   @Input() config: Config | string;
-  public heroes: Array<IHero> = [
-    { name: 'Superman', city: 'Metropolis', superPower: 'Super strength' },
-  ];
+  public heroes: Array<IHero> = [];
+  private destroy$ = new Subject<void>();
 
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService, private keycloakService: KeycloakService) {
    
   }
 
   ngOnInit(): void {
       this.setConfig();
-      this.getHeroes();
+      this.keycloakService.instance$
+      .pipe(takeUntil(this.destroy$),
+        filter((keycloak) => keycloak.initialized),
+        take(1)
+      )
+      .subscribe((keycloak) => {
+       
+          this.getHeroes();
+        
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   private getHeroes(): void {
