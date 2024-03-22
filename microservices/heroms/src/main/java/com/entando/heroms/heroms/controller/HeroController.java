@@ -3,6 +3,7 @@ package com.entando.heroms.heroms.controller;
 import com.entando.heroms.heroms.dto.Hero;
 import com.entando.heroms.heroms.service.HeroService;
 import com.entando.heroms.heroms.service.HeroServiceImpl;
+import jakarta.annotation.security.RolesAllowed;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

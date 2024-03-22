@@ -79,7 +79,8 @@
         }
     ],
     "svc": [
-        "postgresql"
+        "postgresql",
+        "keycloak"
     ],
     "name": "heroes",
     "version": "0.0.3",
