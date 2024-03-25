@@ -1,5 +1,5 @@
 
-up to date, audited 936 packages in 5s
+up to date, audited 936 packages in 4s
 
 118 packages are looking for funding
   run `npm fund` for details
@@ -30,4 +30,4 @@ styles.ef46db3751d8e999.css   | styles        |   0 bytes |                     
 
                               | Initial total | 166.71 kB |                51.17 kB
 
-Build at: 2024-03-22T10:11:25.812Z - Hash: 3d0a8d6a7ecbb74e - Time: 5364ms
+Build at: 2024-03-22T10:52:17.562Z - Hash: 3d0a8d6a7ecbb74e - Time: 5554ms

@@ -1,0 +1,17 @@
+name: simple-epc
+type: app-builder
+group: free
+descriptorVersion: v5
+customElement: simple-epc
+params: []
+ext:
+  appBuilder:
+    slot: content
+    nav:
+      - label:
+          en: YOUR EPC LABEL IN ENGLISH
+          it: YOUR EPC LABEL IN ITALIAN
+        target: internal
+        url: /simple-epc
+    paths:
+      - /simple-epc

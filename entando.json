@@ -76,6 +76,27 @@
             "group": "free",
             "publicFolder": "public",
             "buildFolder": "dist"
+        },
+        {
+            "name": "simple-epc",
+            "customElement": "simple-epc",
+            "stack": "react",
+            "type": "app-builder",
+            "slot": "content",
+            "group": "free",
+            "publicFolder": "public",
+            "paths": ["/simple-epc"],
+            "nav": [
+                {
+                    "label": {
+                    "en": "YOUR EPC LABEL IN ENGLISH",
+                    "it": "YOUR EPC LABEL IN ITALIAN"
+                    },
+                    "target": "internal", 
+                    "url": "/simple-epc"
+                }
+            ]    
+
         }
     ],
     "svc": [
@@ -83,7 +104,7 @@
         "keycloak"
     ],
     "name": "heroes",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "heroes description",
     "type": "bundle"
 }
