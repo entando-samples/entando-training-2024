@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Config } from './models/config.model';
 import { mfeConfig } from './environment/environment';
@@ -18,13 +18,14 @@ interface HeroForm {
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './app.component.html',
-  styleUrls: ['../styles.css', './app.component.css']
+  styleUrls: ['../styles.css', './app.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent implements OnInit {
 
   @Input() config: Config | string;
 
-  title = 'form-hero-widget';
+  pageCode:string;
 
   public heroForm: FormGroup<HeroForm> = new FormGroup<HeroForm>({
     name: new FormControl(),
@@ -53,6 +54,13 @@ export class AppComponent implements OnInit {
     else this.config = mfeConfig;
 
     this.heroService.baseURL = (this.config as Config).systemParams.api['hero-api'].url;
+    this.pageCode = (this.config as Config).contextParams.page_code;
+
+
+    if ((this.config as Config).params?.city) {
+      this.heroForm.controls.city.setValue((this.config as Config).params?.city)
+    }
+
   }
 
 

@@ -29,7 +29,20 @@
                     "type": "internal",
                     "serviceName": "heroms"
                 }
+            ],
+            "contextParams": [
+                "page_code",
+                "info_currentLang",
+                "systemParam_applicationBaseURL"
+            ],
+            "configMfe": "config-hero-widget",
+            "params": [
+                {
+                    "name": "city",
+                    "description": "The city of the hero"
+                }
             ]
+ 
         },
         {
             "name": "table-hero-widget",
@@ -50,13 +63,22 @@
                     "serviceName": "heroms"
                 }
             ]
+        },
+        {
+            "name": "config-hero-widget",
+            "customElement": "config-hero-widget",
+            "stack": "angular",
+            "type": "widget-config",
+            "group": "free",
+            "publicFolder": "public",
+            "buildFolder": "dist"
         }
     ],
     "svc": [
         "postgresql"
     ],
     "name": "ent-training-2024",
-    "version": "0.0.1",
+    "version": "0.0.5",
     "description": "ent-training-2024 description",
     "type": "bundle"
 }

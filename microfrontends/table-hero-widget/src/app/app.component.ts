@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { IHero } from './models/hero.model';
 import { Config } from './models/config.model';
 import { mfeConfig } from './environment/environment';
@@ -9,7 +9,8 @@ import { HeroService } from './services/hero.service';
   standalone: true,
   imports: [],
   templateUrl: './app.component.html',
-  styleUrls: ['../styles.css', './app.component.css']
+  styleUrls: ['../styles.css', './app.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent implements OnInit {
   @Input() config: Config | string;

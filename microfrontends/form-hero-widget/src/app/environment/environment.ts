@@ -7,5 +7,13 @@ export const mfeConfig: Config = {
                 "url": "http://localhost:8081"
             }
         }
+    },
+    "contextParams": {
+        "page_code": "my-page",
+        "info_currentLang": "it",
+        "systemParam_applicationBaseURL": "https://my-production-url/entando-de-app"
+    },
+    "params": {
+        "city": "Roma"
     }
 }
