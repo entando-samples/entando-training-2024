@@ -1,0 +1,22 @@
+{
+    "microservices": [],
+    "microfrontends": [
+        {
+            "name": "form-hero-widget",
+            "customElement": "form-hero-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "form-hero-widget",
+                "it": "form-hero-widget"
+            }
+        }
+    ],
+    "svc": [],
+    "name": "ent-training-2024",
+    "version": "0.0.1",
+    "description": "ent-training-2024 description",
+    "type": "bundle"
+}
