@@ -1,5 +1,12 @@
 {
-    "microservices": [],
+    "microservices": [
+        {
+            "name": "heroms",
+            "stack": "spring-boot",
+            "dbms": "postgresql",
+            "healthCheckPath": "/actuator/health"
+        }
+    ],
     "microfrontends": [
         {
             "name": "form-hero-widget",
@@ -28,7 +35,9 @@
             "buildFolder": "dist"
         }
     ],
-    "svc": [],
+    "svc": [
+        "postgresql"
+    ],
     "name": "ent-training-2024",
     "version": "0.0.1",
     "description": "ent-training-2024 description",
