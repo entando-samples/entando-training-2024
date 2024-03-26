@@ -11,7 +11,21 @@
             "titles": {
                 "en": "form-hero-widget",
                 "it": "form-hero-widget"
-            }
+            },
+            "buildFolder": "dist"
+        },
+        {
+            "name": "table-hero-widget",
+            "customElement": "table-hero-widget",
+            "stack": "angular",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "table-hero-widget",
+                "it": "table-hero-widget"
+            },
+            "buildFolder": "dist"
         }
     ],
     "svc": [],
