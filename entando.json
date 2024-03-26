@@ -4,7 +4,10 @@
             "name": "heroms",
             "stack": "spring-boot",
             "dbms": "postgresql",
-            "healthCheckPath": "/actuator/health"
+            "healthCheckPath": "/actuator/health",
+            "commands": {
+                "run": "mvn spring-boot:run -Dspring-boot.run.profiles=dev"
+            }
         }
     ],
     "microfrontends": [
