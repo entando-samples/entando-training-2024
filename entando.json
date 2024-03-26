@@ -4,7 +4,10 @@
             "name": "heroms",
             "stack": "spring-boot",
             "dbms": "postgresql",
-            "healthCheckPath": "/actuator/health"
+            "healthCheckPath": "/actuator/health",
+            "commands": {
+                "run": "mvn spring-boot:run -Dspring-boot.run.profiles=dev"
+            }
         }
     ],
     "microfrontends": [
@@ -19,7 +22,14 @@
                 "en": "form-hero-widget",
                 "it": "form-hero-widget"
             },
-            "buildFolder": "dist"
+            "buildFolder": "dist",
+            "apiClaims": [
+                {
+                    "name": "hero-api",
+                    "type": "internal",
+                    "serviceName": "heroms"
+                }
+            ]
         },
         {
             "name": "table-hero-widget",
@@ -32,7 +42,14 @@
                 "en": "table-hero-widget",
                 "it": "table-hero-widget"
             },
-            "buildFolder": "dist"
+            "buildFolder": "dist",
+            "apiClaims": [
+                {
+                    "name": "hero-api",
+                    "type": "internal",
+                    "serviceName": "heroms"
+                }
+            ]
         }
     ],
     "svc": [
