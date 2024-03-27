@@ -42,7 +42,6 @@
                     "description": "The city of the hero"
                 }
             ]
- 
         },
         {
             "name": "table-hero-widget",
@@ -75,7 +74,8 @@
         }
     ],
     "svc": [
-        "postgresql"
+        "postgresql",
+        "keycloak"
     ],
     "name": "ent-training-2024",
     "version": "0.0.5",
