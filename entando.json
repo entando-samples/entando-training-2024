@@ -78,7 +78,7 @@
         "keycloak"
     ],
     "name": "ent-training-2024",
-    "version": "0.0.6",
+    "version": "0.0.8",
     "description": "ent-training-2024 description",
     "type": "bundle"
 }

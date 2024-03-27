@@ -1,10 +1,11 @@
-import { Component, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, NgZone, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { IHero } from './models/hero.model';
 import { Config } from './models/config.model';
 import { mfeConfig } from './environment/environment';
 import { HeroService } from './services/hero.service';
 import { KeycloakService } from './services/keycloak.service';
 import { Subject, filter, take, takeUntil } from 'rxjs';
+import { mediatorInstance } from '@entando/mfecommunication';
 
 @Component({
   selector: 'app-root',
@@ -22,8 +23,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private ondestroy$: Subject<void> = new Subject();
 
-  constructor(private heroService: HeroService, private keycloakService: KeycloakService) {
-
+  constructor(private heroService: HeroService, private keycloakService: KeycloakService, private ngZone: NgZone) {
+    
   }
 
   ngOnInit(): void {
@@ -37,11 +38,23 @@ export class AppComponent implements OnInit, OnDestroy {
      ).subscribe(() => {
        this.getHeroes(); 
      })
+
+     mediatorInstance.subscribe('heroAdded', {
+      callerId: 'table-hero-widget',
+      callback: (hero) => {
+        // this.ngZone.run(() => {
+          console.log(hero);
+          this.getHeroes();
+        // })
+      }
+    })
   }
 
   ngOnDestroy(): void {
       this.ondestroy$.next()
       this.ondestroy$.complete()
+
+      mediatorInstance.unsubscribe('heroAdded', 'table-hero-widget');
   }
 
   private getHeroes(): void {

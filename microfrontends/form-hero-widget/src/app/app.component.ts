@@ -4,7 +4,7 @@ import { Config } from './models/config.model';
 import { mfeConfig } from './environment/environment';
 import { HeroService } from './services/hero.service';
 import { IHero } from './models/hero.model';
-
+import { mediatorInstance } from '@entando/mfecommunication';
 
 interface HeroForm {
   name: FormControl<string>;
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
   public saveNewHero(): void {
     this.heroService.createHero(this.heroForm.value as IHero)
       .subscribe((hero) => {
-        console.log(hero);
+        mediatorInstance.publish('heroAdded', hero);
       })
   }
 
