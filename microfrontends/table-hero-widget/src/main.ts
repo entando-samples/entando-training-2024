@@ -3,13 +3,19 @@ import { createCustomElement } from '@angular/elements';
 import { createApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { importProvidersFrom } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { SecurityInterceptor } from './app/interceptors/security.interceptor';
 
 
 (async () => {
   const app = await createApplication({
     providers: [
-      importProvidersFrom(HttpClientModule)
+      importProvidersFrom(HttpClientModule),
+      { 
+        provide: HTTP_INTERCEPTORS,
+        useClass: SecurityInterceptor,
+        multi: true
+      }
     ]
   })
 
