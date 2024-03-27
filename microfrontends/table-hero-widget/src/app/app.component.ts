@@ -24,7 +24,15 @@ export class AppComponent implements OnInit, OnDestroy {
   private ondestroy$: Subject<void> = new Subject();
 
   constructor(private heroService: HeroService, private keycloakService: KeycloakService, private ngZone: NgZone) {
-    
+    mediatorInstance.subscribe('heroAdded', {
+      callerId: 'table-hero-widget',
+      callback: (hero) => {
+        this.ngZone.run(() => {
+          console.log(hero);
+          this.getHeroes();
+        })
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -38,16 +46,6 @@ export class AppComponent implements OnInit, OnDestroy {
      ).subscribe(() => {
        this.getHeroes(); 
      })
-
-     mediatorInstance.subscribe('heroAdded', {
-      callerId: 'table-hero-widget',
-      callback: (hero) => {
-        // this.ngZone.run(() => {
-          console.log(hero);
-          this.getHeroes();
-        // })
-      }
-    })
   }
 
   ngOnDestroy(): void {
